@@ -1,0 +1,60 @@
+body{
+    background-color: #D9D9D9;
+}
+@import url('https://fonts.cdnfonts.com/css/italiana');
+#form-search{
+    margin-top: 50px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+#btn-search{
+    margin-left: 20px;
+    background-color: #584343;
+    border-radius: 50%;
+    border-style: none;
+    width: 80px;
+    height: 50px;
+}
+#btn-search:hover{
+    background-color: #7e7676;
+}
+.font{
+    font-family: "italiana", sans-serif;
+}
+#input-form-search{
+    border-style: none;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+#labelForSearch{
+    margin-right: 20px;
+    font-size: 40px;
+}
+.cart{
+    background-color: #584343;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    padding: 5px;
+    border-color: #584343;
+    border-width: 1px;
+    border-style: solid;
+  }
+.cart:hover{
+  box-shadow: 5px 0px 9px #000000;
+}
+.img_gadget{
+    width: 100%;
+    height: 100%;
+}
+#form-pix{
+    margin-top: 100px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: row wrap;
+}
