@@ -20,7 +20,7 @@ function Main(){
         {
             axios({
                 method:'get',
-                url: `https://${host.getHost()}/api?text=${name}`,
+                url: `https://${host.getHost()}/getImages?text=${name}`,
                 headers: {
                     'Accept': '*/*',
                     'Content-Type': 'application/json'
@@ -28,9 +28,9 @@ function Main(){
             })
             .then(data=>
             {
-                setPix(data.data.hits.map((item, index)=>(item.largeImageURL)));
                 setHiddenCards("");
                 setHiddenPicture("hidden");
+                setPix(data.data.hits.map((item, index)=>(item.largeImageURL)));
             });
         }
         else{
