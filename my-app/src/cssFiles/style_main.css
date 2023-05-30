@@ -58,3 +58,7 @@ body{
     justify-content: center;
     flex-flow: row wrap;
 }
+.pictureNotFound{
+    display: flex;
+    justify-content: center;
+}
