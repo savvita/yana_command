@@ -60,5 +60,12 @@ body{
 }
 .pictureNotFound{
     display: flex;
+    margin-top: 100px;
+    align-items: stretch;
     justify-content: center;
+    flex-flow: row wrap;
+}
+.btnDelete{
+    position: absolute;
+    margin-left: -55px;
 }
