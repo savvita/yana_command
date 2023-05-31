@@ -17,6 +17,8 @@ function Main() {
     const [isHiddenCards, setHiddenCards] = useState("none");
     const [numberOfPaage,setNumberOfPaage] = useState(2);
     const[pictures,setPictures] = useState([]);
+    const [tempPicture,setTempPicture] = useState([]);
+    // const [end,setEnd] = useState(false)
     function getPixByName(name) {
         // setPix(obj2.hits.map((item, index) => (item.largeImageURL)));
         // return;
@@ -41,6 +43,7 @@ function Main() {
                         setCache(name);
                         setHiddenCards("flex");
                         setHiddenPicture("none");
+
                     }
                 });
         }
@@ -60,10 +63,55 @@ function Main() {
             }
         }).then(res => {
             setPictures(res.data.hits);
+            console.log(pictures);
+        })
+        axios({
+            method: 'get',
+            url: `https://pixabay.com/api/?key=29800629-4ce57f3dcb86337a1cd80b83b&q=${text}&image_type=photo&per_page=100`,
+            // url: `https://${host.getHost()}/getImages?text=${name}`,
+            headers: {
+                'Accept': '*/*',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(result=>{
+            setTempPicture(result.data.hits)
+            console.log(tempPicture);
         })
     }
     function deleteCard(event){
-        console.log(event.target.id);
+        var mas = [];
+        let end = false
+        for(let i =0; i< pix.length; i ++){
+            if(i != event.target.id){
+                mas.push(pix[i])
+            }
+            else{
+                do{
+                    const ind = Math.round(Math.random() * (98 - 3))
+                    console.log(tempPicture[ind]['previewURL']);
+                    const flag = 0;
+                    for(let x =0; x< pix.length; x++){
+                        if(pix[x] == tempPicture[ind]['previewURL']){
+                            flag = flag + 1;
+                        }
+                    }
+                    if(flag == 0){
+                        console.log("flag");
+                        mas.push(tempPicture[ind]['previewURL'])
+                        console.log(mas);
+                        end = true
+                        break
+                        // setEnd(true)
+                        // return
+                    }
+                }
+                while(!end)
+                console.log("end do while");
+            }
+        }
+        setPix(mas)
+        console.log(pix);
     }
     return (
         <div>
