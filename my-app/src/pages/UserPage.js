@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logoSearch from "../files/search_white_24dp.svg"
 import '../cssFiles/style_main.css';
@@ -8,7 +8,7 @@ import React from "react";
 import axios from "axios";
 import { Hosting } from '../components/Hosting.ts';
 
-function Main() {
+function Main(params) {
     const [host] = useState(new Hosting());
     const [search, setSearch] = useState("");
     const [pix, setPix] = useState([]);
@@ -17,7 +17,9 @@ function Main() {
     const [numberOfPaage, setNumberOfPaage] = useState(3);
     const [pictures, setPictures] = useState([]);
     const [tempPicture, setTempPicture] = useState([]);
-    const [currentUser, setCurrentUser] = useState({avatar: "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png", name: "tempName"});
+    const {username} = useParams();
+    const [currentUser, setCurrentUser] = useState({avatar: "https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png", name: `${username}`});
+
 
     function getPixByName(name) {
 
@@ -97,19 +99,6 @@ function Main() {
 
     return (
         <div>
-            <div id="form-search" action="">
-                <label id="labelForSearch" className="font" form="input-form-search">Search pix</label>
-                <input id="input-form-search" className="font" type="search" required value={search} onChange={(e) => { setSearch(e.target.value) }}
-                    onKeyDown={(event) => {
-                        if (event.key === 'Enter') {
-                            getPixByName(search)
-                        }
-                    }}
-                ></input>
-                <button id="btn-search" onClick={() => getPixByName(search)}>
-                    <img id="logo-search" style={{ width: '40px', height: '40px' }} src={logoSearch}></img>
-                </button>
-            </div>
             <br></br>
             <div id="user-block">
                 <h2>User Profile:</h2>
