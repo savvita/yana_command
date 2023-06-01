@@ -21,20 +21,41 @@ namespace PixabayApi.Controllers {
         [HttpGet]
         [Route("getImages")]
         public async Task<IActionResult> getImages(string text) {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q={text}&image_type=photo&per_page=3"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase))
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q={text}&image_type=photo&per_page=3"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         [Route("getUserImages")]
         public async Task<IActionResult> getUserImages(string text) {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q=user:{text}"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase))
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q=user:{text}"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         [Route("getImagesPaginate")]
         public async Task<IActionResult> getImagesPaginate(string text, int page)
         {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q={text}&image_type=photo&&perPage=3&page={page}"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase) && page <= 250)
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q={text}&image_type=photo&&perPage=3&page={page}"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         // VIDEO
@@ -43,21 +64,42 @@ namespace PixabayApi.Controllers {
         [Route("getVideos")]
         public async Task<IActionResult> getVideos(string text)
         {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q={text}"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase))
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q={text}"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         [Route("getUserVideos")]
         public async Task<IActionResult> getUserVideos(string text)
         {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q=user:{text}"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase))
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q=user:{text}"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet]
         [Route("getVideosPaginate")]
         public async Task<IActionResult> getVideosPaginate(string text, int page)
         {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q={text}"));
+            if (!string.Equals(text, "bmw", StringComparison.OrdinalIgnoreCase) && !string.Equals(text, "бмв", StringComparison.OrdinalIgnoreCase) && page <= 250)
+            {
+                return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/videos/?key={configuration["Authorization:Key"]}&q={text}&page={page}"));
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }
