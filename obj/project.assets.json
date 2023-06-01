@@ -224,23 +224,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thespiker\\.nuget\\packages\\": {},
+    "C:\\Users\\Toucc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thespiker\\source\\repos\\PixabayApi\\PixabayApi\\PixabayApi.csproj",
+      "projectUniqueName": "C:\\Users\\Toucc\\source\\repos\\yana_command\\PixabayApi.csproj",
       "projectName": "PixabayApi",
-      "projectPath": "C:\\Users\\thespiker\\source\\repos\\PixabayApi\\PixabayApi\\PixabayApi.csproj",
-      "packagesPath": "C:\\Users\\thespiker\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thespiker\\source\\repos\\PixabayApi\\PixabayApi\\obj\\",
+      "projectPath": "C:\\Users\\Toucc\\source\\repos\\yana_command\\PixabayApi.csproj",
+      "packagesPath": "C:\\Users\\Toucc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Toucc\\source\\repos\\yana_command\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\thespiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Toucc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -291,7 +291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

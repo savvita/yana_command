@@ -7,9 +7,16 @@ namespace PixabayApi.Controllers {
     [Route("api")]
     public class ImageController :ControllerBase{
 
+        private readonly IConfiguration configuration;
+
+        public ImageController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         [HttpGet(Name = "getImages")]
         public async Task<IActionResult> getImages(string text) {
-            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key=29800629-4ce57f3dcb86337a1cd80b83b&q={text}&image_type=photo&per_page=3"));
+            return Ok(await RequestHelper.GetAsync($"https://pixabay.com/api/?key={configuration["Authorization:Key"]}&q={text}&image_type=photo&per_page=3"));
         }
     }
 }

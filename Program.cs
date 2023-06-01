@@ -1,3 +1,6 @@
+using PixabayApi.Controllers;
+using PixabayApi.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
