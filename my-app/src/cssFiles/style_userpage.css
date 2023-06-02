@@ -30,7 +30,9 @@
     
 }
 
-.btnDelete
-{
-    display: none;
+.user-img_container{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: row wrap;
 }
