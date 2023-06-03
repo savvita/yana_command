@@ -77,3 +77,38 @@ body{
     right: 0;
     top: 0;
 }
+
+.radio {
+    color: #584343;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.radio-container div {
+    margin: 10px;
+}
+
+.movie {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 500px;
+} 
+
+.video-card__container {
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px;
+    margin-bottom: 3rem;
+    width: 18rem;
+    height: auto;
+}
+
+.main_container {
+    max-width: 960px;
+    margin: auto;
+}

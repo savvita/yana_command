@@ -36,3 +36,19 @@
     justify-content: center;
     flex-flow: row wrap;
 }
+
+.link{
+    text-decoration: none;
+    color: #584343;
+    display: inline-block;
+    border: 1px solid #584343;
+    border-radius: 2px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+
+.main_container {
+    max-width: 960px;
+    margin: auto;
+}
